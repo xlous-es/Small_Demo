@@ -12,7 +12,6 @@ import java.util.Scanner;
  */
 public class Calculator {
 
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("请输入运算式：");
@@ -21,7 +20,6 @@ public class Calculator {
         str = str.replaceAll("\\s*", "");
         System.out.println(getOperation(str));
     }
-
     /**
      * 存在括号计算方法
      *
@@ -47,7 +45,6 @@ public class Calculator {
             }
         }
     }
-
     /**
      * 无括号计算方法
      *
@@ -82,7 +79,6 @@ public class Calculator {
             Double right = numlist.remove(0);
             numlist.add(0, ch == '+' ? left + right : left - right);
         }
-
         return String.format("%.2f", numlist.get(0));
     }
 
