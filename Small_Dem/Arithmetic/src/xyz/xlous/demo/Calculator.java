@@ -1,6 +1,8 @@
 package xyz.xlous.demo;
 
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,6 +31,9 @@ public class Calculator {
     public static String getOperation(String str) {
         int lindex = str.lastIndexOf('(');
         if (lindex == -1) {
+            if (str.indexOf(')') != -1) {
+                throw new RuntimeException("运算式输入有误，请重新输入！");
+            }
             return getCal(str);
         } else {
             int rindex = str.indexOf(')', lindex);
@@ -150,5 +155,6 @@ public class Calculator {
         }
         return str;
     }
+
 
 }
